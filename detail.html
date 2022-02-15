@@ -5,27 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
     <title>Container detail</title>
   </head>
   <body>
     <header class="header">
-      <div>
+      <div class="header-content">
+        <div>
         <button class="toggle-button" type="button" name="nav_toggle"">
           <span class="toggle-button__bar"></span>
           <span class="toggle-button__bar"></span>
           <span class="toggle-button__bar"></span>
         </button>
-      </div>
+        </div>
       <div class="header-text">Container</div>
-      
+      </div>
     </header>
+    <nav class="main-nav">
+      <ul class="main-nav__items">
+          <li class="main-nav__item">
+              <a href="packages/index.html">Packages</a>
+          </li>
+          <li class="main-nav__item">
+              <a href="customers/index.html">Customers</a>
+          </li>
+          <li class="main-nav__item main-nav__item--cta">
+              <a href="start-hosting/index.html">Start Hosting</a>
+          </li>
+      </ul>
+  </nav>
 
     <div class="detail-content">
-      <div class="controls">
-        <button class="button" type="button">Show Logs</button>
-        <button class="button" type="button">Restart</button>
-        <button class="button" type="button">More</button>
-      </div>
       <div class="logs">
         <pre>
 [amc] Done ヾ(＠⌒ー⌒＠)ノ
