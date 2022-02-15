@@ -13,30 +13,65 @@ body {
 }
 
 html {
+  width: 100%;
   font-size: 62.5%;
   box-sizing: border-box;
-  margin: 0 auto;
 }
-
-header {
+/*
+  Toggle Button
+*/
+.header {
+  width: 100%;
   height: 7rem;
   text-align: center;
-  font-size: 3rem;
   margin-bottom: 2.5rem;
   padding: 2rem;
   position: sticky;
   top: 0;
-  left: 0;
   right: 0;
   background-color: darkgray;
+  display: flex;
+  justify-content: space-between;
+}
+.header-text {
+  font-size: 3rem;
+}
+/*
+  Toggle Button
+*/
+.toggle-button {
+  width: 3rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding-top: 0;
+  padding-bottom: 0;
+  vertical-align: middle;
+  display: none;
 }
 
+.toggle-button:focus {
+  outline: none;
+}
+
+.toggle-button__bar {
+  width: 100%;
+  height: 0.2rem;
+  background: black;
+  display: block;
+  margin: 0.6rem 0;
+}
+
+/* 
+
+*/
 .main {
   display: grid;
   grid-template-columns: repeat(3, 40rem);
   justify-content: center;
   grid-gap: 2rem;
 }
+
 .card {
   width: 100%;
   height: 20rem;
@@ -106,28 +141,44 @@ header {
 /*
     Detail page
 */
+
 .detail-content {
-  margin: auto;
-  width: 600px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .controls {
+  /* min-width: 630px; */
   display: flex;
-  /* justify-content: space-between; */
+  justify-content: space-between;
 }
 .button {
   width: 20rem;
   height: 5rem;
   padding: 5px;
-  margin-left: 10px;
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
   background-color: green;
   color: white;
   font-size: 2.3rem;
   cursor: pointer;
   border: none;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  flex: 0 1 auto;
 }
-
+.logs {
+  margin: 2.5rem;
+  max-width: 610px;
+  max-height: 100rem;
+  overflow-y: scroll;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0px 2px 5px 0px #919;
+}
 pre {
+  word-wrap: break-word;
+  text-align: justify;
   font-family: "Andale Mono WT";
   font-size: 1.3rem;
   line-height: 2rem;
@@ -147,15 +198,31 @@ pre {
     justify-items: center;
   }
 }
-
-@media only screen and (max-width: 420px) {
+@media only screen and (max-width: 600px) {
+  .page-content {
+    height: 100vh;
+  }
+  .header {
+    margin-bottom: 0;
+  }
   .controls {
+    width: 90%;
+    height: 250px;
     flex-direction: column;
+    align-content: center;
+    background-color: aqua;
+    justify-content: space-evenly;
+    align-items: center;
   }
   .button {
-    width: 300px;
-    margin-bottom: 10px;
+    width: 100%;
   }
   .logs {
+    margin: 0 2rem;
+    max-width: 420;
+    max-height: 50vh;
+  }
+  .toggle-button {
+    display: block;
   }
 }
