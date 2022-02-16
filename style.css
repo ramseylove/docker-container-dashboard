@@ -33,18 +33,21 @@ html {
 }
 .header-content {
   padding: 1rem 1.8rem;
-  height: 8rem;
+  height: 7rem;
   display: flex;
   /* justify-content: center; */
-  /* align-items: center; */
+  align-items: center;
 }
-.container-name {
+.header-content h3 {
   margin-left: auto;
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
+
 .main-nav {
-  background-color: darkgray;
-  position: relative;
+  width: 100%;
+  background-color: darkgrey;
+  position: sticky;
+  top: 7rem;
   border: none;
   display: none;
 }
@@ -90,9 +93,9 @@ html {
 /* .toggle-button__bar:not(:first-of-type) {
   margin-top: 0.6rem;
 } */
-.toggle-button__bar:not(:last-of-type) {
+/* .toggle-button__bar:not(:last-of-type) {
   margin-bottom: 0.6rem;
-}
+} */
 
 /* 
   Main page styles
@@ -107,15 +110,12 @@ html {
 }
 
 .card {
-  /* width: 30rem; */
-  /* height: 20rem; */
-  /* margin: 2rem; */
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   cursor: pointer;
 }
 
 .container {
-  margin: 1.5rem 0;
+  margin: 1.5rem 1.5rem;
   font-size: 2.7rem;
 }
 
@@ -220,7 +220,7 @@ html {
 }
 .logs {
   max-width: 610px;
-  max-height: 100rem;
+  max-height: 60rem;
   overflow-y: scroll;
   border: 1px solid rgba(0, 0, 0, 0.2);
   box-shadow: inset 0px 2px 5px 0px #919;
