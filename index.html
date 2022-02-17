@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"
+    />
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
     <title>Containers</title>
@@ -17,7 +21,17 @@
           <span class="toggle-button__bar"></span>
           <span class="toggle-button__bar"></span>
         </button>
-        
+        <!-- Dark Mode Switch -->
+    <div class="theme-switch-wrapper">
+      <span id="toggle-icon">
+        <span class="toggle-text">Light Mode</span>
+        <i class="fas fa-sun"></i>
+      </span>
+      <label class="theme-switch" for="toggle-check">
+        <input type="checkbox" id="toggle-check" />
+        <div class="slider round"></div>
+      </label>
+    </div>
         <h3>All Containers</h3>
       </div>
     </header>
