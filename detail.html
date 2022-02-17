@@ -5,27 +5,54 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
     <title>Container detail</title>
   </head>
   <body>
     <header class="header">
-      <div>
-        <button class="toggle-button" type="button" name="nav_toggle"">
-          <span class="toggle-button__bar"></span>
-          <span class="toggle-button__bar"></span>
-          <span class="toggle-button__bar"></span>
-        </button>
+      <div class="header-content">
+        
+          <button class="toggle-button" type="button" name="nav_toggle"">
+            <span class="toggle-button__bar"></span>
+            <span class="toggle-button__bar"></span>
+            <span class="toggle-button__bar"></span>
+          </button>
+
+          <h3>nginx-proxy-manager</h3>
+
       </div>
-      <div class="header-text">Container</div>
-      
     </header>
+    <nav class="main-nav">
+      <ul class="main-nav__items">
+          <li class="main-nav__item">
+              <a href="packages/index.html">Packages</a>
+          </li>
+          <li class="main-nav__item">
+              <a href="customers/index.html">Customers</a>
+          </li>
+          <li class="main-nav__item main-nav__item--cta">
+              <a href="start-hosting/index.html">Start Hosting</a>
+          </li>
+      </ul>
+  </nav>
 
     <div class="detail-content">
-      <div class="controls">
-        <button class="button" type="button">Show Logs</button>
-        <button class="button" type="button">Restart</button>
-        <button class="button" type="button">More</button>
-      </div>
+        <div class="container-info">
+          <div class="label">Description:</div>
+          <div class="container-description">Docker container for Nginx Proxy Manager</div>
+            <div class="label">Status: </div>
+            <div class="container-state-status">
+              <span class="container-state">Running</span>
+              <span class="container-status">Up 9 days</span>
+            </div>
+            <div class="label">Image: </div>
+            <div class="image-name">@username/nginx</div>
+            <div class="label">Version: </div>
+          <div class="container-version">1.24.1</div>
+          <div class="label">Repository: </div>
+          <div class="container-repository">
+            <a href="https://github.com/jlesage/docker-nginx-proxy-manager">https://github.com/jlesage/docker-nginx-proxy-manager</a></div>
+        </div>
       <div class="logs">
         <pre>
 [amc] Done ヾ(＠⌒ー⌒＠)ノ
@@ -44,9 +71,25 @@
 [amc] Use excludes: /config/amc-exlude-list.txt (109)
 [amc] Ignore video extra: /watch/movies/Encino Man (1992) 720p WEBRip x264 Eng Subs [Dual Audio] [Hindi DD 2.0 - English 2.0] -=!Dr.STAR!=-/Sample Encino Man (1992) 720p WEBRip x264 Eng Subs [Dual Audio] [Hindi DD 2.0 - English 2.0] -=!Dr.STAR!=-.mkv
 [amc] No files selected for processing
-[amc] Done ¯_(ツ)_/¯</pre
+[amc] Done ¯_(ツ)_/¯
+[amc] Done ヾ(＠⌒ー⌒＠)ノ
+[amc] Invoking AMC script...
+[amc] Run script [fn:amc] at [Sun Feb 13 17:43:38 GMT 2022]
+[amc] Parameter: artwork = n
+[amc] Parameter: music = y
+[amc] Parameter: clean = y
+[amc] Parameter: excludeList = /config/amc-exlude-list.txt
+[amc] Parameter: movieFormat = {plex}
+[amc] Parameter: musicFormat = {plex}
+[amc] Parameter: seriesFormat = TV/{plex.tail}
+[amc] Parameter: animeFormat = {plex}
+[amc] Parameter: subtitles = en
+[amc] Argument[0]: /watch</pre
         >
       </div>
+      <div class="control">
+      <button class="load-button" type="button">Load More</button>
+    </div>
     </div>
   </body>
 </html>

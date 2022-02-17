@@ -7,47 +7,76 @@
 }
 
 body {
+  /* width: 80vw; */
+  min-height: 100vh;
   font-family: "Lato", sans-serif;
   font-weight: 400;
   font-size: 16px;
 }
 
 html {
-  width: 100%;
+  /* width: 100%; */
   font-size: 62.5%;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 /*
-  Toggle Button
+  Header styles
 */
 .header {
-  width: 100%;
+  /* width: auto; */
   height: 7rem;
-  text-align: center;
-  margin-bottom: 2.5rem;
-  padding: 2rem;
   position: sticky;
   top: 0;
-  right: 0;
+  left: 0;
   background-color: darkgray;
-  display: flex;
-  justify-content: space-between;
 }
-.header-text {
-  font-size: 3rem;
+.header-content {
+  padding: 1rem 1.8rem;
+  height: 7rem;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+}
+.header-content h3 {
+  margin-left: auto;
+  font-size: 2.2rem;
+}
+
+.main-nav {
+  width: 100%;
+  background-color: darkgrey;
+  position: sticky;
+  top: 7rem;
+  border: none;
+  display: none;
+}
+.main-nav__items {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-nav__items a {
+  color: white;
+  font-size: 1.9rem;
+  text-decoration: none;
+}
+.main-nav__item {
+  padding: 2rem;
 }
 /*
-  Toggle Button
+  Toggle Button in header
 */
 .toggle-button {
+  /* height: 7rem; */
   width: 3rem;
   background: transparent;
   border: none;
   cursor: pointer;
-  padding-top: 0;
-  padding-bottom: 0;
-  vertical-align: middle;
-  display: none;
+  margin-right: auto;
 }
 
 .toggle-button:focus {
@@ -56,51 +85,55 @@ html {
 
 .toggle-button__bar {
   width: 100%;
-  height: 0.2rem;
+  height: 0.3rem;
   background: black;
   display: block;
-  margin: 0.6rem 0;
+  margin-top: 0.6rem;
 }
+/* .toggle-button__bar:not(:first-of-type) {
+  margin-top: 0.6rem;
+} */
+/* .toggle-button__bar:not(:last-of-type) {
+  margin-bottom: 0.6rem;
+} */
 
 /* 
-
+  Main page styles
 */
 .main {
+  margin: 2rem;
   display: grid;
-  grid-template-columns: repeat(3, 40rem);
+  grid-template-columns: repeat(auto-fill, minmax(33rem, 35rem));
+  grid-template-rows: auto;
   justify-content: center;
   grid-gap: 2rem;
 }
 
 .card {
-  width: 100%;
-  height: 20rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   cursor: pointer;
+  border-radius: 6px;
 }
 
-.container-name {
-  text-align: center;
-  margin-top: 1.5rem;
+.container {
+  margin: 1.5rem 1.5rem;
   font-size: 2.7rem;
 }
 
 .content-container {
-  padding: 2rem;
+  padding-bottom: 2rem;
   display: flex;
   justify-content: center;
   align-content: center;
 }
 
 .left {
-  width: 100px;
-  height: 100px;
   margin-right: 2rem;
 }
 
 .left img {
-  width: 100%;
-  height: 100%;
+  width: 100px;
+  height: 100px;
   object-fit: cover;
 }
 
@@ -141,37 +174,54 @@ html {
 /*
     Detail page
 */
-
 .detail-content {
-  margin: 0 auto;
-  width: 100%;
+  padding: 2rem;
+
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
-.controls {
-  /* min-width: 630px; */
-  display: flex;
-  justify-content: space-between;
+.container-info {
+  height: 17rem;
+  padding-bottom: 1.5rem;
+  display: grid;
+  grid-column-gap: 4rem;
+  grid-template-columns: 10rem auto;
+  justify-items: start;
+  align-items: start;
 }
-.button {
-  width: 20rem;
+.container-name {
+  font-size: 2.3rem;
+  padding-bottom: 2rem;
+}
+
+.container-state {
+  margin-right: 3rem;
+}
+.container-status {
+  font-size: 1.1rem;
+}
+.label {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.load-button {
   height: 5rem;
   padding: 5px;
-  margin-right: 0.5rem;
-  margin-left: 0.5rem;
+  margin-top: 1rem;
   background-color: green;
   color: white;
   font-size: 2.3rem;
   cursor: pointer;
   border: none;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  flex: 0 1 auto;
+  flex: 1 0 auto;
 }
 .logs {
-  margin: 2.5rem;
   max-width: 610px;
-  max-height: 100rem;
+  max-height: 60rem;
   overflow-y: scroll;
   border: 1px solid rgba(0, 0, 0, 0.2);
   box-shadow: inset 0px 2px 5px 0px #919;
@@ -186,43 +236,19 @@ pre {
   padding: 2rem;
 }
 
-@media only screen and (max-width: 1340px) {
-  .main {
-    grid-template-columns: repeat(2, 40rem);
-  }
-}
-
-@media only screen and (max-width: 900px) {
-  .main {
-    grid-template-columns: 40rem;
-    justify-items: center;
-  }
-}
-@media only screen and (max-width: 600px) {
+@media (max-width: 600px) {
   .page-content {
     height: 100vh;
   }
   .header {
     margin-bottom: 0;
   }
-  .controls {
-    width: 90%;
-    height: 250px;
-    flex-direction: column;
-    align-content: center;
-    background-color: aqua;
-    justify-content: space-evenly;
-    align-items: center;
-  }
-  .button {
-    width: 100%;
-  }
+
   .logs {
-    margin: 0 2rem;
-    max-width: 420;
-    max-height: 50vh;
+    max-height: 60vh;
   }
-  .toggle-button {
-    display: block;
-  }
+}
+
+.open {
+  display: block !important;
 }
