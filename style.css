@@ -35,7 +35,7 @@ body {
   font-weight: 400;
   font-size: 16px;
   background-color: var(--on-background);
-  color: var(--primary-font-color);
+  color: var(--secondary-font-color);
 }
 
 html {
@@ -54,6 +54,7 @@ html {
   top: 0;
   left: 0;
   background-color: var(--secondary-color);
+  color: var(--primary-font-color);
 }
 .header-content {
   padding: 1rem 1.8rem;
@@ -135,12 +136,14 @@ html {
   color: var(--secondary-font-color);
 }
 .card a:link {
-  color: var(--link-color);
+  text-decoration: none;
+  color: var(--secondary-font-color);
 }
 
-.container {
+.container-header {
   margin: 1.5rem 1.5rem;
   font-size: 2.7rem;
+  color: var(--secondary-font-color);
 }
 
 .content-container {
@@ -163,7 +166,8 @@ html {
 .right {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 3rem;
+  /* justify-content: space-between; */
 }
 
 .state-status {
@@ -188,10 +192,6 @@ html {
 
 .image {
   margin-right: 4rem;
-}
-
-.source a {
-  text-decoration: none;
 }
 
 /*
