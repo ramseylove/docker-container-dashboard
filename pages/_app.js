@@ -1,11 +1,14 @@
 import Layout from "../components/layout/layout";
+import { NavigationContextProvider } from "../store/nav-context";
 import "../styles/globals.css";
 
 function dockerContainerApp({ Component, pageProps }) {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <NavigationContextProvider>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </NavigationContextProvider>
   );
 }
 
