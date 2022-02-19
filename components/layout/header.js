@@ -26,10 +26,10 @@ function Header(props) {
         {/* <!-- Dark Mode Switch --> */}
         <div className="theme-switch-wrapper">
           <span id="toggle-icon">
-            <span className="toggle-text">Light Mode</span>
+            <span className="toggle-text">{themeCtx.theme.toUpperCase()}</span>
             <i className="fas fa-sun"></i>
           </span>
-          <label className="theme-switch" for="toggle-check">
+          <label className="theme-switch" htmlFor="toggle-check">
             <input
               type="checkbox"
               id="toggle-check"
