@@ -1,7 +1,12 @@
 import { useContext } from "react";
+import DockerCardList from "../components/docker/docker-card-list";
 
 function HomePage(props) {
-  return <div>Welcome to earth</div>;
+  return (
+    <div>
+      <DockerCardList />
+    </div>
+  );
 }
 
 export default HomePage;

@@ -1,0 +1,1195 @@
+{
+  "containers": [
+    {
+      "Command": "/portainer",
+      "Created": 1644625113,
+      "HostConfig": {
+        "NetworkMode": "default"
+      },
+      "id": "7e46b54973850790c1534120f41b078f78aaeebf969ea1dc352825c595313864",
+      "Image": "portainer/portainer-ce",
+      "ImageID": "sha256:ed396c816a7560eecd27dd3bc06b60912badaef223238d82c1741d7d3626a039",
+      "IsPortainer": true,
+      "Labels": {},
+      "Mounts": [
+        {
+          "Destination": "/data",
+          "Driver": "local",
+          "Mode": "z",
+          "Name": "portainer_data",
+          "Propagation": "",
+          "RW": true,
+          "Source": "/srv/docker/system/volumes/portainer_data/_data",
+          "Type": "volume"
+        },
+        {
+          "Destination": "/var/run/docker.sock",
+          "Mode": "",
+          "Propagation": "rprivate",
+          "RW": true,
+          "Source": "/var/run/docker.sock",
+          "Type": "bind"
+        }
+      ],
+      "Names": ["/portainer"],
+      "NetworkSettings": {
+        "Networks": {
+          "bridge": {
+            "Aliases": null,
+            "DriverOpts": null,
+            "EndpointID": "3b9e60822217af85b53fdeea932fb018686be75d9e8683f1941068d6d4e6eba3",
+            "Gateway": "172.17.0.1",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAMConfig": null,
+            "IPAddress": "172.17.0.2",
+            "IPPrefixLen": 16,
+            "IPv6Gateway": "",
+            "Links": null,
+            "MacAddress": "02:42:ac:11:00:02",
+            "NetworkID": "5ba1029fc516d908cbded84caa667fc67e0c84f0851d5add9ae762432593ef8b"
+          }
+        }
+      },
+      "Ports": [
+        {
+          "IP": "0.0.0.0",
+          "PrivatePort": 8000,
+          "PublicPort": 8000,
+          "Type": "tcp"
+        },
+        {
+          "IP": "::",
+          "PrivatePort": 8000,
+          "PublicPort": 8000,
+          "Type": "tcp"
+        },
+        {
+          "IP": "0.0.0.0",
+          "PrivatePort": 9000,
+          "PublicPort": 9000,
+          "Type": "tcp"
+        },
+        {
+          "IP": "::",
+          "PrivatePort": 9000,
+          "PublicPort": 9000,
+          "Type": "tcp"
+        },
+        {
+          "PrivatePort": 9443,
+          "Type": "tcp"
+        }
+      ],
+      "State": "running",
+      "Status": "Up 9 days"
+    },
+    {
+      "Command": "/init",
+      "Created": 1642217879,
+      "HostConfig": {
+        "NetworkMode": "nginx-proxy-network"
+      },
+      "id": "d6d9530dbe8632064d3f8c1de802bbcd000c6853c70434e7219efdafc689bb8a",
+      "Image": "jlesage/nginx-proxy-manager:latest",
+      "ImageID": "sha256:e1d993c0c144ddf8aeb240068f3427b0ac9efc29ecd75bbd77d94959810f013b",
+      "Labels": {
+        "org.label-schema.description": "Docker container for Nginx Proxy Manager",
+        "org.label-schema.name": "nginx-proxy-manager",
+        "org.label-schema.schema-version": "1.0",
+        "org.label-schema.vcs-url": "https://github.com/jlesage/docker-nginx-proxy-manager",
+        "org.label-schema.version": "1.24.1",
+        "org.opencontainers.image.created": "2022-01-02T22:24:50Z",
+        "org.opencontainers.image.revision": "283a38f4f691c7c0f500f509e17065794bb0c089",
+        "org.opencontainers.image.source": "https://github.com/jlesage/docker-nginx-proxy-manager.git",
+        "org.opencontainers.image.url": "https://github.com/jlesage/docker-nginx-proxy-manager"
+      },
+      "Mounts": [
+        {
+          "Destination": "/config",
+          "Mode": "",
+          "Propagation": "rprivate",
+          "RW": true,
+          "Source": "/srv/dev-disk-by-uuid-6bb7107a-f1af-4acc-9faf-7682f2f1f4e1/configs/Nginx-Proxy",
+          "Type": "bind"
+        }
+      ],
+      "Names": ["/nginx-proxy-manager"],
+      "NetworkSettings": {
+        "Networks": {
+          "nginx-proxy-network": {
+            "Aliases": null,
+            "DriverOpts": null,
+            "EndpointID": "74efcdb3d7141d1ef4b41446c5e3640d7bcb5ae999aede89d766ee88477d9592",
+            "Gateway": "172.21.0.1",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAMConfig": {},
+            "IPAddress": "172.21.0.2",
+            "IPPrefixLen": 16,
+            "IPv6Gateway": "",
+            "Links": null,
+            "MacAddress": "02:42:ac:15:00:02",
+            "NetworkID": "231bce1d596f4e825becf18be2b860537cc9946f8c7043e3030d07428f543371"
+          }
+        }
+      },
+      "Portainer": {
+        "ResourceControl": {
+          "id": 75,
+          "ResourceId": "d6d9530dbe8632064d3f8c1de802bbcd000c6853c70434e7219efdafc689bb8a",
+          "SubResourceIds": [],
+          "Type": 1,
+          "UserAccesses": [],
+          "TeamAccesses": [],
+          "Public": false,
+          "AdministratorsOnly": true,
+          "System": false
+        }
+      },
+      "Ports": [
+        {
+          "IP": "0.0.0.0",
+          "PrivatePort": 4443,
+          "PublicPort": 443,
+          "Type": "tcp"
+        },
+        {
+          "IP": "::",
+          "PrivatePort": 4443,
+          "PublicPort": 443,
+          "Type": "tcp"
+        },
+        {
+          "IP": "0.0.0.0",
+          "PrivatePort": 8080,
+          "PublicPort": 80,
+          "Type": "tcp"
+        },
+        {
+          "IP": "::",
+          "PrivatePort": 8080,
+          "PublicPort": 80,
+          "Type": "tcp"
+        },
+        {
+          "IP": "0.0.0.0",
+          "PrivatePort": 8181,
+          "PublicPort": 811,
+          "Type": "tcp"
+        },
+        {
+          "IP": "::",
+          "PrivatePort": 8181,
+          "PublicPort": 811,
+          "Type": "tcp"
+        }
+      ],
+      "State": "running",
+      "Status": "Up 2 weeks"
+    },
+    {
+      "Command": "/usr/bin/entrypoint /bin/s6-svscan /etc/s6",
+      "Created": 1642215800,
+      "HostConfig": {
+        "NetworkMode": "nginx-proxy-network"
+      },
+      "id": "d141db322e3515a767cccec8d2dcb856da578464116dda521e00aae97dec5182",
+      "Image": "gitea/gitea:latest",
+      "ImageID": "sha256:2516daf1a36a9ac73595c04c9c644abef3c63b9c625c64b5d2d14442838e53b9",
+      "Labels": {
+        "com.docker.compose.config-hash": "ad2b321751ad2b28c641e6acf393237c93581cdd7d13826c05c67947a838deea",
+        "com.docker.compose.container-number": "1",
+        "com.docker.compose.oneoff": "False",
+        "com.docker.compose.project": "gitea",
+        "com.docker.compose.project.config_files": "/data/compose/19/docker-compose.yml",
+        "com.docker.compose.project.working_dir": "/data/compose/19",
+        "com.docker.compose.service": "server",
+        "com.docker.compose.version": "1.27.4",
+        "maintainer": "maintainers@gitea.io",
+        "org.opencontainers.image.created": "2021-06-17T23:56:32Z",
+        "org.opencontainers.image.revision": "75205b5669c86fb1b49daa1805f0987bd5b3cbe2",
+        "org.opencontainers.image.source": "https://github.com/go-gitea/gitea.git",
+        "org.opencontainers.image.url": "https://github.com/go-gitea/gitea"
+      },
+      "Mounts": [
+        {
+          "Destination": "/data",
+          "Mode": "",
+          "Propagation": "rprivate",
+          "RW": true,
+          "Source": "/srv/dev-disk-by-uuid-6bb7107a-f1af-4acc-9faf-7682f2f1f4e1/configs/gitea/data",
+          "Type": "bind"
+        },
+        {
+          "Destination": "/etc/localtime",
+          "Mode": "ro",
+          "Propagation": "rprivate",
+          "RW": false,
+          "Source": "/etc/localtime",
+          "Type": "bind"
+        },
+        {
+          "Destination": "/etc/timezone",
+          "Mode": "ro",
+          "Propagation": "rprivate",
+          "RW": false,
+          "Source": "/etc/timezone",
+          "Type": "bind"
+        }
+      ],
+      "Names": ["/gitea"],
+      "NetworkSettings": {
+        "Networks": {
+          "gitea_gitea": {
+            "Aliases": null,
+            "DriverOpts": null,
+            "EndpointID": "dc4269a6038bc8736caee96cd20bf455693156d120cbd5e2a82a2f2c95063a9e",
+            "Gateway": "172.19.0.1",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAMConfig": null,
+            "IPAddress": "172.19.0.3",
+            "IPPrefixLen": 16,
+            "IPv6Gateway": "",
+            "Links": null,
+            "MacAddress": "02:42:ac:13:00:03",
+            "NetworkID": "b669089d1cc89abf1994c87ba8f2f32cb8acc98593bbf1450dbf7ac6f993fd9b"
+          },
+          "nginx-proxy-network": {
+            "Aliases": null,
+            "DriverOpts": null,
+            "EndpointID": "2a9940eafa553b9e887ba234f8d94521c2b616ebb90057338e970e16ff20b963",
+            "Gateway": "172.21.0.1",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAMConfig": {},
+            "IPAddress": "172.21.0.3",
+            "IPPrefixLen": 16,
+            "IPv6Gateway": "",
+            "Links": null,
+            "MacAddress": "02:42:ac:15:00:03",
+            "NetworkID": "231bce1d596f4e825becf18be2b860537cc9946f8c7043e3030d07428f543371"
+          }
+        }
+      },
+      "Portainer": {
+        "ResourceControl": {
+          "id": 73,
+          "ResourceId": "d141db322e3515a767cccec8d2dcb856da578464116dda521e00aae97dec5182",
+          "SubResourceIds": [],
+          "Type": 1,
+          "UserAccesses": [],
+          "TeamAccesses": [],
+          "Public": false,
+          "AdministratorsOnly": true,
+          "System": false
+        }
+      },
+      "Ports": [
+        {
+          "IP": "0.0.0.0",
+          "PrivatePort": 22,
+          "PublicPort": 222,
+          "Type": "tcp"
+        },
+        {
+          "IP": "::",
+          "PrivatePort": 22,
+          "PublicPort": 222,
+          "Type": "tcp"
+        },
+        {
+          "IP": "0.0.0.0",
+          "PrivatePort": 3000,
+          "PublicPort": 3000,
+          "Type": "tcp"
+        },
+        {
+          "IP": "::",
+          "PrivatePort": 3000,
+          "PublicPort": 3000,
+          "Type": "tcp"
+        }
+      ],
+      "State": "running",
+      "Status": "Up 2 weeks"
+    },
+    {
+      "Command": "/init",
+      "Created": 1641878278,
+      "HostConfig": {
+        "NetworkMode": "mediastack_default"
+      },
+      "id": "db22fb3a7d85713eaa13c97e6aa20ad634edf795e621f14e32d2a68229cbcd0e",
+      "Image": "organizr/organizr",
+      "ImageID": "sha256:3f2eb396565267f132e9dee5a2cc2ee494ad99a9b1709fd452b29eb39e42661a",
+      "Labels": {
+        "base.maintainer": "christronyxyocum,Roxedus",
+        "base.s6.arch": "amd64",
+        "base.s6.rel": "2.1.0.2",
+        "com.docker.compose.config-hash": "afcd581962d0b5953450b4d58f505488625812db3c5d17f1fce9b7bb147bd55d",
+        "com.docker.compose.container-number": "1",
+        "com.docker.compose.oneoff": "False",
+        "com.docker.compose.project": "mediastack",
+        "com.docker.compose.project.config_files": "/data/compose/1/docker-compose.yml",
+        "com.docker.compose.project.working_dir": "/data/compose/1",
+        "com.docker.compose.service": "organizr",
+        "com.docker.compose.version": "1.27.4",
+        "maintainer": "christronyxyocum,Roxedus",
+        "org.label-schema.description": "Baseimage for Organizr",
+        "org.label-schema.name": "organizr/base",
+        "org.label-schema.schema-version": "1.0",
+        "org.label-schema.url": "https://organizr.app/",
+        "org.label-schema.vcs-url": "https://github.com/organizr/docker-base",
+        "org.opencontainers.image.created": "2021-02-13_19",
+        "org.opencontainers.image.source": "https://github.com/Organizr/docker-organizr/tree/master",
+        "org.opencontainers.image.title": "organizr/base",
+        "org.opencontainers.image.url": "https://github.com/Organizr/docker-organizr/blob/master/README.md"
+      },
+      "Mounts": [
+        {
+          "Destination": "/config",
+          "Mode": "",
+          "Propagation": "rprivate",
+          "RW": true,
+          "Source": "/srv/dev-disk-by-uuid-6bb7107a-f1af-4acc-9faf-7682f2f1f4e1/configs/Organizr",
+          "Type": "bind"
+        }
+      ],
+      "Names": ["/organizr"],
+      "NetworkSettings": {
+        "Networks": {
+          "mediastack_default": {
+            "Aliases": null,
+            "DriverOpts": null,
+            "EndpointID": "d9a26b64a0a7c57f41a030509e6ed39477c3cb1002fb9197e9c317cde6afdba3",
+            "Gateway": "172.18.0.1",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAMConfig": null,
+            "IPAddress": "172.18.0.3",
+            "IPPrefixLen": 16,
+            "IPv6Gateway": "",
+            "Links": null,
+            "MacAddress": "02:42:ac:12:00:03",
+            "NetworkID": "20eaadba347bcd00e2669c696dea3dc97b0505e4e06361aa4713c69703d3a4ee"
+          }
+        }
+      },
+      "Portainer": {
+        "ResourceControl": {
+          "id": 70,
+          "ResourceId": "db22fb3a7d85713eaa13c97e6aa20ad634edf795e621f14e32d2a68229cbcd0e",
+          "SubResourceIds": [],
+          "Type": 1,
+          "UserAccesses": [],
+          "TeamAccesses": [],
+          "Public": false,
+          "AdministratorsOnly": true,
+          "System": false
+        }
+      },
+      "Ports": [
+        {
+          "PrivatePort": 443,
+          "Type": "tcp"
+        },
+        {
+          "IP": "0.0.0.0",
+          "PrivatePort": 80,
+          "PublicPort": 90,
+          "Type": "tcp"
+        },
+        {
+          "IP": "::",
+          "PrivatePort": 80,
+          "PublicPort": 90,
+          "Type": "tcp"
+        }
+      ],
+      "State": "running",
+      "Status": "Up 2 weeks (healthy)"
+    },
+    {
+      "Command": "/init",
+      "Created": 1641580708,
+      "HostConfig": {
+        "NetworkMode": "host"
+      },
+      "id": "6a8935ed3d59d8fcb88700b705ccf0e2676f7d7f93e93728a97f371483f7282d",
+      "Image": "ghcr.io/linuxserver/unifi-controller:latest",
+      "ImageID": "sha256:164c27cfcae35aab42f13266ef280fe475df2e184183c5df3def9114fe4cab7e",
+      "Labels": {
+        "build_version": "Linuxserver.io version:- 6.2.25-ls111 Build-date:- 2021-06-01T02:06:08-04:00",
+        "maintainer": "aptalca",
+        "org.opencontainers.image.authors": "linuxserver.io",
+        "org.opencontainers.image.created": "2021-06-01T02:06:08-04:00",
+        "org.opencontainers.image.description": "The [Unifi-controller](https://www.ubnt.com/enterprise/#unifi) Controller software is a powerful, enterprise wireless software engine ideal for high-density client deployments requiring low latency and high uptime performance.  ",
+        "org.opencontainers.image.documentation": "https://docs.linuxserver.io/images/docker-unifi-controller",
+        "org.opencontainers.image.licenses": "GPL-3.0-only",
+        "org.opencontainers.image.ref.name": "a5359c3d3e76ef6559faef7416450690dd24e2c7",
+        "org.opencontainers.image.revision": "a5359c3d3e76ef6559faef7416450690dd24e2c7",
+        "org.opencontainers.image.source": "https://github.com/linuxserver/docker-unifi-controller",
+        "org.opencontainers.image.title": "Unifi-controller",
+        "org.opencontainers.image.url": "https://github.com/linuxserver/docker-unifi-controller/packages",
+        "org.opencontainers.image.vendor": "linuxserver.io",
+        "org.opencontainers.image.version": "6.2.25-ls111"
+      },
+      "Mounts": [
+        {
+          "Destination": "/config",
+          "Mode": "",
+          "Propagation": "rprivate",
+          "RW": true,
+          "Source": "/srv/dev-disk-by-uuid-6bb7107a-f1af-4acc-9faf-7682f2f1f4e1/configs/unifi",
+          "Type": "bind"
+        }
+      ],
+      "Names": ["/Unifi_Controlr"],
+      "NetworkSettings": {
+        "Networks": {
+          "host": {
+            "Aliases": null,
+            "DriverOpts": null,
+            "EndpointID": "7b7714c21660a9218bba8ab71baa3bed6e224a7926d6eddf5c22fb9aa53f7329",
+            "Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAMConfig": {},
+            "IPAddress": "",
+            "IPPrefixLen": 0,
+            "IPv6Gateway": "",
+            "Links": null,
+            "MacAddress": "",
+            "NetworkID": "2e7f92ff593e0e03f98d7c864ca17842390d42e8e6bc22a7eccc01400060130e"
+          }
+        }
+      },
+      "Portainer": {
+        "ResourceControl": {
+          "id": 59,
+          "ResourceId": "6a8935ed3d59d8fcb88700b705ccf0e2676f7d7f93e93728a97f371483f7282d",
+          "SubResourceIds": [],
+          "Type": 1,
+          "UserAccesses": [],
+          "TeamAccesses": [],
+          "Public": false,
+          "AdministratorsOnly": true,
+          "System": false
+        }
+      },
+      "Ports": [],
+      "State": "running",
+      "Status": "Up 2 weeks"
+    },
+    {
+      "Command": "/bin/bash /etc/openvpn/start.sh",
+      "Created": 1637048285,
+      "HostConfig": {
+        "NetworkMode": "mediastack_default"
+      },
+      "id": "812584a48f3f32d1ad7f3f20495eb52550f9c02db381b641ac04bed510e22754",
+      "Image": "markusmcnugen/qbittorrentvpn:latest",
+      "ImageID": "sha256:4412c6e4c4aea5040b59f14189bf578b10a3ddd3da5434d1c3e71440cd9de676",
+      "Labels": {
+        "com.docker.compose.config-hash": "59be669af7875cf47a3e8de1ccc9517c713ab0e3a4d198171030c352ae95357f",
+        "com.docker.compose.container-number": "1",
+        "com.docker.compose.oneoff": "False",
+        "com.docker.compose.project": "mediastack",
+        "com.docker.compose.project.config_files": "/data/compose/1/docker-compose.yml",
+        "com.docker.compose.project.working_dir": "/data/compose/1",
+        "com.docker.compose.service": "qbittorrentvpn",
+        "com.docker.compose.version": "1.27.4"
+      },
+      "Mounts": [
+        {
+          "Destination": "/downloads",
+          "Mode": "",
+          "Propagation": "rprivate",
+          "RW": true,
+          "Source": "/srv/dev-disk-by-uuid-6bb7107a-f1af-4acc-9faf-7682f2f1f4e1/torrents/downloads",
+          "Type": "bind"
+        },
+        {
+          "Destination": "/etc/timezone",
+          "Mode": "ro",
+          "Propagation": "rprivate",
+          "RW": false,
+          "Source": "/etc/timezone",
+          "Type": "bind"
+        },
+        {
+          "Destination": "/config",
+          "Mode": "",
+          "Propagation": "rprivate",
+          "RW": true,
+          "Source": "/srv/dev-disk-by-uuid-6bb7107a-f1af-4acc-9faf-7682f2f1f4e1/configs/QBittorrentVPN",
+          "Type": "bind"
+        }
+      ],
+      "Names": ["/qbittorrentvpn"],
+      "NetworkSettings": {
+        "Networks": {
+          "mediastack_default": {
+            "Aliases": null,
+            "DriverOpts": null,
+            "EndpointID": "b7371310502ad393615d1f785fb6ecffac700247a96cba8ba6c30e57eceb4d51",
+            "Gateway": "172.18.0.1",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAMConfig": {},
+            "IPAddress": "172.18.0.5",
+            "IPPrefixLen": 16,
+            "IPv6Gateway": "",
+            "Links": null,
+            "MacAddress": "02:42:ac:12:00:05",
+            "NetworkID": "20eaadba347bcd00e2669c696dea3dc97b0505e4e06361aa4713c69703d3a4ee"
+          }
+        }
+      },
+      "Portainer": {
+        "ResourceControl": {
+          "id": 58,
+          "ResourceId": "812584a48f3f32d1ad7f3f20495eb52550f9c02db381b641ac04bed510e22754",
+          "SubResourceIds": [],
+          "Type": 1,
+          "UserAccesses": [],
+          "TeamAccesses": [],
+          "Public": false,
+          "AdministratorsOnly": true,
+          "System": false
+        }
+      },
+      "Ports": [
+        {
+          "IP": "0.0.0.0",
+          "PrivatePort": 8999,
+          "PublicPort": 8999,
+          "Type": "tcp"
+        },
+        {
+          "IP": "::",
+          "PrivatePort": 8999,
+          "PublicPort": 8999,
+          "Type": "tcp"
+        },
+        {
+          "IP": "0.0.0.0",
+          "PrivatePort": 8999,
+          "PublicPort": 8999,
+          "Type": "udp"
+        },
+        {
+          "IP": "::",
+          "PrivatePort": 8999,
+          "PublicPort": 8999,
+          "Type": "udp"
+        },
+        {
+          "IP": "0.0.0.0",
+          "PrivatePort": 8080,
+          "PublicPort": 8080,
+          "Type": "tcp"
+        },
+        {
+          "IP": "::",
+          "PrivatePort": 8080,
+          "PublicPort": 8080,
+          "Type": "tcp"
+        }
+      ],
+      "State": "running",
+      "Status": "Up 2 weeks"
+    },
+    {
+      "Command": "/init",
+      "Created": 1634273905,
+      "HostConfig": {
+        "NetworkMode": "mediastack_default"
+      },
+      "id": "f8a9a3cccf2be6aae5cd0057629d45f37c81ad5050f2f42fd76b70946d2faa2e",
+      "Image": "lscr.io/linuxserver/jackett",
+      "ImageID": "sha256:778d98c74fe6ac230012fb8e887b6b2d83133ebd137de3671db1d0ec7c903911",
+      "Labels": {
+        "build_version": "Linuxserver.io version:- v0.18.992-ls48 Build-date:- 2021-10-14T07:22:42+02:00",
+        "com.docker.compose.config-hash": "334e58561768b47128cce1174764092977aa9aeee51d62bd63b5a1ff0b79674d",
+        "com.docker.compose.container-number": "1",
+        "com.docker.compose.oneoff": "False",
+        "com.docker.compose.project": "mediastack",
+        "com.docker.compose.project.config_files": "/data/compose/1/docker-compose.yml",
+        "com.docker.compose.project.working_dir": "/data/compose/1",
+        "com.docker.compose.service": "jackett",
+        "com.docker.compose.version": "1.27.4",
+        "maintainer": "thelamer",
+        "org.opencontainers.image.authors": "linuxserver.io",
+        "org.opencontainers.image.created": "2021-10-14T07:22:42+02:00",
+        "org.opencontainers.image.description": "[Jackett](https://github.com/Jackett/Jackett) works as a proxy server: it translates queries from apps (Sonarr, SickRage, CouchPotato, Mylar, etc) into tracker-site-specific http queries, parses the html response, then sends results back to the requesting software. This allows for getting recent uploads (like RSS) and performing searches. Jackett is a single repository of maintained indexer scraping & translation logic - removing the burden from other apps.",
+        "org.opencontainers.image.documentation": "https://docs.linuxserver.io/images/docker-jackett",
+        "org.opencontainers.image.licenses": "GPL-3.0-only",
+        "org.opencontainers.image.ref.name": "ac7901907fdd52bc26a81b4bea122878ef6870c6",
+        "org.opencontainers.image.revision": "ac7901907fdd52bc26a81b4bea122878ef6870c6",
+        "org.opencontainers.image.source": "https://github.com/linuxserver/docker-jackett",
+        "org.opencontainers.image.title": "Jackett",
+        "org.opencontainers.image.url": "https://github.com/linuxserver/docker-jackett/packages",
+        "org.opencontainers.image.vendor": "linuxserver.io",
+        "org.opencontainers.image.version": "v0.18.992-ls48"
+      },
+      "Mounts": [
+        {
+          "Destination": "/config",
+          "Mode": "rw",
+          "Propagation": "rprivate",
+          "RW": true,
+          "Source": "/srv/dev-disk-by-uuid-6bb7107a-f1af-4acc-9faf-7682f2f1f4e1/configs/Jackett",
+          "Type": "bind"
+        },
+        {
+          "Destination": "/downloads",
+          "Mode": "rw",
+          "Propagation": "rprivate",
+          "RW": true,
+          "Source": "/srv/dev-disk-by-uuid-6bb7107a-f1af-4acc-9faf-7682f2f1f4e1/torrents/downloads",
+          "Type": "bind"
+        }
+      ],
+      "Names": ["/jackett"],
+      "NetworkSettings": {
+        "Networks": {
+          "mediastack_default": {
+            "Aliases": null,
+            "DriverOpts": null,
+            "EndpointID": "83dd53da8e222ca1f6e82fb6861b01a76b07dd098e052eba1077e0bf7fa72f56",
+            "Gateway": "172.18.0.1",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAMConfig": null,
+            "IPAddress": "172.18.0.4",
+            "IPPrefixLen": 16,
+            "IPv6Gateway": "",
+            "Links": null,
+            "MacAddress": "02:42:ac:12:00:04",
+            "NetworkID": "20eaadba347bcd00e2669c696dea3dc97b0505e4e06361aa4713c69703d3a4ee"
+          }
+        }
+      },
+      "Portainer": {
+        "ResourceControl": {
+          "id": 1,
+          "ResourceId": "1_mediastack",
+          "SubResourceIds": [],
+          "Type": 6,
+          "UserAccesses": [],
+          "TeamAccesses": [],
+          "Public": false,
+          "AdministratorsOnly": true,
+          "System": false
+        }
+      },
+      "Ports": [
+        {
+          "IP": "0.0.0.0",
+          "PrivatePort": 9117,
+          "PublicPort": 9117,
+          "Type": "tcp"
+        },
+        {
+          "IP": "::",
+          "PrivatePort": 9117,
+          "PublicPort": 9117,
+          "Type": "tcp"
+        }
+      ],
+      "State": "running",
+      "Status": "Up 2 weeks"
+    },
+    {
+      "Command": "/init",
+      "Created": 1632587849,
+      "HostConfig": {
+        "NetworkMode": "mediastack_default"
+      },
+      "id": "4fc747387efd5ee589f789ace07ca2c2cd16aaf33b0a797352e776e90a287fb8",
+      "Image": "jlesage/filebot:latest",
+      "ImageID": "sha256:67176a42948ee5811f0c7b6d3819376329f7eac60da9ceffa23766276dc7a823",
+      "Labels": {
+        "org.label-schema.description": "Docker container for FileBot",
+        "org.label-schema.name": "filebot",
+        "org.label-schema.schema-version": "1.0",
+        "org.label-schema.vcs-url": "https://github.com/jlesage/docker-filebot",
+        "org.label-schema.version": "1.11.1",
+        "org.opencontainers.image.created": "2021-04-01T12:25:22Z",
+        "org.opencontainers.image.revision": "a71b230739f54a8ff60342e2457209c784d6b41b",
+        "org.opencontainers.image.source": "https://github.com/jlesage/docker-filebot.git",
+        "org.opencontainers.image.url": "https://github.com/jlesage/docker-filebot"
+      },
+      "Mounts": [
+        {
+          "Destination": "/config",
+          "Mode": "",
+          "Propagation": "rprivate",
+          "RW": true,
+          "Source": "/srv/dev-disk-by-uuid-6bb7107a-f1af-4acc-9faf-7682f2f1f4e1/configs/filebot",
+          "Type": "bind"
+        },
+        {
+          "Destination": "/output",
+          "Mode": "",
+          "Propagation": "rprivate",
+          "RW": true,
+          "Source": "/srv/dev-disk-by-uuid-6bb7107a-f1af-4acc-9faf-7682f2f1f4e1/media",
+          "Type": "bind"
+        },
+        {
+          "Destination": "/storage",
+          "Mode": "",
+          "Propagation": "rprivate",
+          "RW": true,
+          "Source": "/srv/dev-disk-by-uuid-6bb7107a-f1af-4acc-9faf-7682f2f1f4e1/app-data/filebot",
+          "Type": "bind"
+        },
+        {
+          "Destination": "/watch",
+          "Mode": "",
+          "Propagation": "rprivate",
+          "RW": true,
+          "Source": "/srv/dev-disk-by-uuid-6bb7107a-f1af-4acc-9faf-7682f2f1f4e1/torrents/downloads/entertainment",
+          "Type": "bind"
+        }
+      ],
+      "Names": ["/filebot"],
+      "NetworkSettings": {
+        "Networks": {
+          "mediastack_default": {
+            "Aliases": null,
+            "DriverOpts": null,
+            "EndpointID": "b784735b5bfe16193ea9767aea285bf2d4d7cb2c38541b47e14e85eeddc9d833",
+            "Gateway": "172.18.0.1",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAMConfig": {},
+            "IPAddress": "172.18.0.2",
+            "IPPrefixLen": 16,
+            "IPv6Gateway": "",
+            "Links": null,
+            "MacAddress": "02:42:ac:12:00:02",
+            "NetworkID": "20eaadba347bcd00e2669c696dea3dc97b0505e4e06361aa4713c69703d3a4ee"
+          }
+        }
+      },
+      "Portainer": {
+        "ResourceControl": {
+          "id": 57,
+          "ResourceId": "4fc747387efd5ee589f789ace07ca2c2cd16aaf33b0a797352e776e90a287fb8",
+          "SubResourceIds": [],
+          "Type": 1,
+          "UserAccesses": [],
+          "TeamAccesses": [],
+          "Public": false,
+          "AdministratorsOnly": true,
+          "System": false
+        }
+      },
+      "Ports": [
+        {
+          "IP": "0.0.0.0",
+          "PrivatePort": 5800,
+          "PublicPort": 5800,
+          "Type": "tcp"
+        },
+        {
+          "IP": "::",
+          "PrivatePort": 5800,
+          "PublicPort": 5800,
+          "Type": "tcp"
+        },
+        {
+          "PrivatePort": 5900,
+          "Type": "tcp"
+        }
+      ],
+      "State": "running",
+      "Status": "Up 7 days"
+    },
+    {
+      "Command": "/init",
+      "Created": 1628782636,
+      "HostConfig": {
+        "NetworkMode": "host"
+      },
+      "id": "eaf38cb74a0e2171e42676503c9c9334852d9a5fedf3c5f5442eabb5da1689ef",
+      "Image": "ghcr.io/linuxserver/plex",
+      "ImageID": "sha256:885ba5181b60ec9d46cf4fbc324730e911fb9f65f1b62cf594441c46252fb9f6",
+      "Labels": {
+        "build_version": "Linuxserver.io version:- 1.21.4.4079-1b7748a7b-ls30 Build-date:- 2021-03-01T23:03:54-05:00",
+        "com.docker.compose.config-hash": "97808547b3016174b64eec8e9bad9f17369855f8b06f18b1675921d4dca85405",
+        "com.docker.compose.container-number": "1",
+        "com.docker.compose.oneoff": "False",
+        "com.docker.compose.project": "mediastack",
+        "com.docker.compose.project.config_files": "/data/compose/1/docker-compose.yml",
+        "com.docker.compose.project.working_dir": "/data/compose/1",
+        "com.docker.compose.service": "plex",
+        "com.docker.compose.version": "1.27.4",
+        "maintainer": "thelamer"
+      },
+      "Mounts": [
+        {
+          "Destination": "/config",
+          "Mode": "rw",
+          "Propagation": "rprivate",
+          "RW": true,
+          "Source": "/srv/dev-disk-by-uuid-6bb7107a-f1af-4acc-9faf-7682f2f1f4e1/plex",
+          "Type": "bind"
+        },
+        {
+          "Destination": "/media",
+          "Mode": "rw",
+          "Propagation": "rprivate",
+          "RW": true,
+          "Source": "/srv/dev-disk-by-uuid-6bb7107a-f1af-4acc-9faf-7682f2f1f4e1/media",
+          "Type": "bind"
+        },
+        {
+          "Destination": "/movies",
+          "Mode": "rw",
+          "Propagation": "rprivate",
+          "RW": true,
+          "Source": "/srv/dev-disk-by-uuid-6bb7107a-f1af-4acc-9faf-7682f2f1f4e1/media/Movies",
+          "Type": "bind"
+        },
+        {
+          "Destination": "/tv",
+          "Mode": "rw",
+          "Propagation": "rprivate",
+          "RW": true,
+          "Source": "/srv/dev-disk-by-uuid-6bb7107a-f1af-4acc-9faf-7682f2f1f4e1/media/TV",
+          "Type": "bind"
+        },
+        {
+          "Destination": "/youTubes",
+          "Mode": "rw",
+          "Propagation": "rprivate",
+          "RW": true,
+          "Source": "/srv/dev-disk-by-uuid-6bb7107a-f1af-4acc-9faf-7682f2f1f4e1/media/YouTubes",
+          "Type": "bind"
+        }
+      ],
+      "Names": ["/plex"],
+      "NetworkSettings": {
+        "Networks": {
+          "host": {
+            "Aliases": null,
+            "DriverOpts": null,
+            "EndpointID": "9e66dd00dad0cc9d81a6d9559786d640a46f4df6941bca110e5b05e6b63d0d8c",
+            "Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAMConfig": null,
+            "IPAddress": "",
+            "IPPrefixLen": 0,
+            "IPv6Gateway": "",
+            "Links": null,
+            "MacAddress": "",
+            "NetworkID": "2e7f92ff593e0e03f98d7c864ca17842390d42e8e6bc22a7eccc01400060130e"
+          }
+        }
+      },
+      "Portainer": {
+        "ResourceControl": {
+          "id": 1,
+          "ResourceId": "1_mediastack",
+          "SubResourceIds": [],
+          "Type": 6,
+          "UserAccesses": [],
+          "TeamAccesses": [],
+          "Public": false,
+          "AdministratorsOnly": true,
+          "System": false
+        }
+      },
+      "Ports": [],
+      "State": "running",
+      "Status": "Up 2 weeks"
+    },
+    {
+      "Command": "docker-entrypoint.sh postgres",
+      "Created": 1624028600,
+      "HostConfig": {
+        "NetworkMode": "gitea_gitea"
+      },
+      "id": "81a7405dec40aaeccad723dc136db92e03c5f67d84df434b809c0e777679f9d8",
+      "Image": "postgres:13",
+      "ImageID": "sha256:e36567eeafa19bf09a11b8f56e588bf7f338682d71afef1c9daa20db6868cc2e",
+      "Labels": {
+        "com.docker.compose.config-hash": "6aa3bcc305a80608d7cfe57e417e1911667ccb30999b77b1d312acdb90350bbf",
+        "com.docker.compose.container-number": "1",
+        "com.docker.compose.oneoff": "False",
+        "com.docker.compose.project": "gitea",
+        "com.docker.compose.project.config_files": "/data/compose/19/docker-compose.yml",
+        "com.docker.compose.project.working_dir": "/data/compose/19",
+        "com.docker.compose.service": "db",
+        "com.docker.compose.version": "1.27.4"
+      },
+      "Mounts": [
+        {
+          "Destination": "/var/lib/postgresql/data",
+          "Mode": "rw",
+          "Propagation": "rprivate",
+          "RW": true,
+          "Source": "/srv/dev-disk-by-uuid-6bb7107a-f1af-4acc-9faf-7682f2f1f4e1/configs/gitea/postgres",
+          "Type": "bind"
+        }
+      ],
+      "Names": ["/gitea_db_1"],
+      "NetworkSettings": {
+        "Networks": {
+          "gitea_gitea": {
+            "Aliases": null,
+            "DriverOpts": null,
+            "EndpointID": "a6ebdc8d54ea1767b89432bbe0b69a2d8b7a56e2c384238a83d574b153d104d6",
+            "Gateway": "172.19.0.1",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAMConfig": null,
+            "IPAddress": "172.19.0.2",
+            "IPPrefixLen": 16,
+            "IPv6Gateway": "",
+            "Links": null,
+            "MacAddress": "02:42:ac:13:00:02",
+            "NetworkID": "b669089d1cc89abf1994c87ba8f2f32cb8acc98593bbf1450dbf7ac6f993fd9b"
+          }
+        }
+      },
+      "Portainer": {
+        "ResourceControl": {
+          "id": 53,
+          "ResourceId": "1_gitea",
+          "SubResourceIds": [],
+          "Type": 6,
+          "UserAccesses": [],
+          "TeamAccesses": [],
+          "Public": false,
+          "AdministratorsOnly": true,
+          "System": false
+        }
+      },
+      "Ports": [
+        {
+          "PrivatePort": 5432,
+          "Type": "tcp"
+        }
+      ],
+      "State": "running",
+      "Status": "Up 2 weeks"
+    },
+    {
+      "Command": "/init",
+      "Created": 1622913649,
+      "HostConfig": {
+        "NetworkMode": "host"
+      },
+      "id": "bb4e91b49e07799e5c0e5f7fe0ba2c507621b1233d108c5282c3184d16b60bc0",
+      "Image": "homeassistant/home-assistant:stable",
+      "ImageID": "sha256:fb2da50b81e7bfaa8b2ca0ddbaf276ec2ae6ccf96ac5a715dab56c0c42088cd7",
+      "Labels": {
+        "io.hass.arch": "amd64",
+        "io.hass.base.arch": "amd64",
+        "io.hass.base.image": "homeassistant/amd64-base:3.12",
+        "io.hass.base.name": "python",
+        "io.hass.base.version": "2021.04.1",
+        "io.hass.type": "core",
+        "io.hass.version": "2021.6.2",
+        "org.opencontainers.image.authors": "The Home Assistant Authors",
+        "org.opencontainers.image.created": "2021-06-04 17:52:48+00:00",
+        "org.opencontainers.image.description": "Open-source home automation platform running on Python 3",
+        "org.opencontainers.image.documentation": "https://www.home-assistant.io/docs/",
+        "org.opencontainers.image.licenses": "Apache License 2.0",
+        "org.opencontainers.image.source": "https://github.com/home-assistant/core",
+        "org.opencontainers.image.title": "Home Assistant",
+        "org.opencontainers.image.url": "https://www.home-assistant.io/",
+        "org.opencontainers.image.version": "2021.6.2"
+      },
+      "Mounts": [
+        {
+          "Destination": "/etc/localtime",
+          "Mode": "ro",
+          "Propagation": "rprivate",
+          "RW": false,
+          "Source": "/etc/localtime",
+          "Type": "bind"
+        },
+        {
+          "Destination": "/etc/localtime:ro",
+          "Driver": "local",
+          "Mode": "",
+          "Name": "47f78daa8175d2bda3d8219ec6204e5a74cc313a31f0b721102ce74c15cf605c",
+          "Propagation": "",
+          "RW": true,
+          "Source": "",
+          "Type": "volume"
+        },
+        {
+          "Destination": "/config",
+          "Mode": "",
+          "Propagation": "rprivate",
+          "RW": true,
+          "Source": "/srv/dev-disk-by-uuid-6bb7107a-f1af-4acc-9faf-7682f2f1f4e1/configs/home-assistant",
+          "Type": "bind"
+        }
+      ],
+      "Names": ["/homeassistant"],
+      "NetworkSettings": {
+        "Networks": {
+          "host": {
+            "Aliases": null,
+            "DriverOpts": null,
+            "EndpointID": "58442786b8950292ab925197bcb852b60a81ae1085ec83101d5cc4762770abe7",
+            "Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAMConfig": {},
+            "IPAddress": "",
+            "IPPrefixLen": 0,
+            "IPv6Gateway": "",
+            "Links": null,
+            "MacAddress": "",
+            "NetworkID": "2e7f92ff593e0e03f98d7c864ca17842390d42e8e6bc22a7eccc01400060130e"
+          }
+        }
+      },
+      "Portainer": {
+        "ResourceControl": {
+          "id": 48,
+          "ResourceId": "bb4e91b49e07799e5c0e5f7fe0ba2c507621b1233d108c5282c3184d16b60bc0",
+          "SubResourceIds": [],
+          "Type": 1,
+          "UserAccesses": [],
+          "TeamAccesses": [],
+          "Public": false,
+          "AdministratorsOnly": true,
+          "System": false
+        }
+      },
+      "Ports": [],
+      "State": "running",
+      "Status": "Up 2 weeks"
+    },
+    {
+      "Command": "/init",
+      "Created": 1621171185,
+      "HostConfig": {
+        "NetworkMode": "bridge"
+      },
+      "id": "5413eff6630e6467b56fb0559ef3dd858fc9b5d41dc491fa3c6f7e777cf984ae",
+      "Image": "linuxserver/duplicati:latest",
+      "ImageID": "sha256:f0685ad56e33652582aed727f2ef1f592470a254c85dc66b4f981c5e20969137",
+      "Labels": {
+        "build_version": "Linuxserver.io version:- v2.0.5.1-2.0.5.1_beta_2020-01-18-ls93 Build-date:- 2021-03-12T05:03:49-05:00",
+        "maintainer": "sparklyballs",
+        "org.opencontainers.image.authors": "linuxserver.io",
+        "org.opencontainers.image.created": "2021-04-23T10:08:47+00:00",
+        "org.opencontainers.image.description": "[Duplicati](https://www.duplicati.com/) works with standard protocols like FTP, SSH, WebDAV as well as popular services like Microsoft OneDrive, Amazon Cloud Drive & S3, Google Drive, box.com, Mega, hubiC and many others.",
+        "org.opencontainers.image.documentation": "https://docs.linuxserver.io/images/docker-duplicati",
+        "org.opencontainers.image.licenses": "GPL-3.0-only",
+        "org.opencontainers.image.ref.name": "d90910aa87e74fa09b4bd6c28f1b49089c85279b",
+        "org.opencontainers.image.revision": "d90910aa87e74fa09b4bd6c28f1b49089c85279b",
+        "org.opencontainers.image.source": "https://github.com/linuxserver/docker-duplicati",
+        "org.opencontainers.image.title": "Duplicati",
+        "org.opencontainers.image.url": "https://github.com/linuxserver/docker-duplicati/packages",
+        "org.opencontainers.image.vendor": "linuxserver.io",
+        "org.opencontainers.image.version": "v2.0.5.1-2.0.5.1_beta_2020-01-18-ls99"
+      },
+      "Mounts": [
+        {
+          "Destination": "/backups",
+          "Mode": "",
+          "Propagation": "rprivate",
+          "RW": true,
+          "Source": "/srv/dev-disk-by-uuid-6bb7107a-f1af-4acc-9faf-7682f2f1f4e1/configs/Duplicati/backups",
+          "Type": "bind"
+        },
+        {
+          "Destination": "/config",
+          "Mode": "",
+          "Propagation": "rprivate",
+          "RW": true,
+          "Source": "/srv/dev-disk-by-uuid-6bb7107a-f1af-4acc-9faf-7682f2f1f4e1/configs/Duplicati/configs",
+          "Type": "bind"
+        },
+        {
+          "Destination": "/mnt/omv-drive",
+          "Mode": "ro",
+          "Propagation": "rprivate",
+          "RW": false,
+          "Source": "/srv/dev-disk-by-uuid-6bb7107a-f1af-4acc-9faf-7682f2f1f4e1",
+          "Type": "bind"
+        },
+        {
+          "Destination": "/source",
+          "Mode": "",
+          "Propagation": "rprivate",
+          "RW": true,
+          "Source": "/srv/dev-disk-by-uuid-6bb7107a-f1af-4acc-9faf-7682f2f1f4e1/configs/Duplicati/source",
+          "Type": "bind"
+        },
+        {
+          "Destination": "/tmp",
+          "Mode": "",
+          "Propagation": "rprivate",
+          "RW": true,
+          "Source": "/srv/dev-disk-by-uuid-6bb7107a-f1af-4acc-9faf-7682f2f1f4e1/configs/Duplicati/tmp",
+          "Type": "bind"
+        }
+      ],
+      "Names": ["/duplicati"],
+      "NetworkSettings": {
+        "Networks": {
+          "bridge": {
+            "Aliases": null,
+            "DriverOpts": null,
+            "EndpointID": "1392bbf9c8997500b7a5f82c2a5520aee178f0e530e4f8d7fa478356825e08d6",
+            "Gateway": "172.17.0.1",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAMConfig": {},
+            "IPAddress": "172.17.0.3",
+            "IPPrefixLen": 16,
+            "IPv6Gateway": "",
+            "Links": null,
+            "MacAddress": "02:42:ac:11:00:03",
+            "NetworkID": "5ba1029fc516d908cbded84caa667fc67e0c84f0851d5add9ae762432593ef8b"
+          }
+        }
+      },
+      "Portainer": {
+        "ResourceControl": {
+          "id": 47,
+          "ResourceId": "5413eff6630e6467b56fb0559ef3dd858fc9b5d41dc491fa3c6f7e777cf984ae",
+          "SubResourceIds": [],
+          "Type": 1,
+          "UserAccesses": [],
+          "TeamAccesses": [],
+          "Public": false,
+          "AdministratorsOnly": true,
+          "System": false
+        }
+      },
+      "Ports": [
+        {
+          "IP": "0.0.0.0",
+          "PrivatePort": 8200,
+          "PublicPort": 8200,
+          "Type": "tcp"
+        },
+        {
+          "IP": "::",
+          "PrivatePort": 8200,
+          "PublicPort": 8200,
+          "Type": "tcp"
+        }
+      ],
+      "State": "running",
+      "Status": "Up 2 weeks"
+    }
+  ]
+}

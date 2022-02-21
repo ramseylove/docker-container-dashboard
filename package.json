@@ -9,5 +9,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
+  },
+  "devDependencies": {
+    "json-server": "^0.17.0"
   }
 }
