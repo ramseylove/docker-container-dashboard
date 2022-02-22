@@ -1,24 +1,25 @@
 import React from "react";
-import path from "path";
-import { readFile } from "fs/promises";
+
+import DockerCard from "./docker-card";
 
 function DockerCardList(props) {
+  const { containers } = props;
+  console.log(containers);
   return (
-    <div>
-      {props.containers.map((container) => {
-        <h1>{container.image}</h1>;
-      })}
+    <div className="main">
+      {containers.map((container) => (
+        <DockerCard
+          key={container.id}
+          id={container.id}
+          image={container.image}
+          state={container.state}
+          status={container.status}
+          name={container.name}
+        />
+      ))}
     </div>
   );
 }
-export async function getStaticProps() {
-  console.log("re-generating");
-
-  return {
-    props: {
-      containers: data.containers,
-    },
-  };
-}
+// export async function getStaticProps() {}
 
 export default DockerCardList;

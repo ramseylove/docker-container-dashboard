@@ -127,6 +127,10 @@ html {
   justify-content: center;
   grid-gap: 2rem;
 }
+.main a:link {
+  text-decoration: none;
+  color: var(--secondary-font-color);
+}
 
 .card {
   box-shadow: var(--card-shadow);
@@ -134,22 +138,22 @@ html {
   border-radius: 6px;
   background-color: var(--card-color);
   color: var(--secondary-font-color);
-}
-.card a:link {
-  text-decoration: none;
-  color: var(--secondary-font-color);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
 }
 
 .container-header {
-  margin: 1.5rem 1.5rem;
+  margin-bottom: 1.5rem;
   font-size: 2.7rem;
   color: var(--secondary-font-color);
 }
 
 .content-container {
-  padding-bottom: 2rem;
+  /* padding-bottom: 2rem; */
   display: flex;
-  justify-content: center;
+  /* justify-content: space-between; */
   align-content: center;
 }
 
@@ -164,34 +168,22 @@ html {
 }
 
 .right {
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-  /* justify-content: space-between; */
+  width: 100%;
 }
 
 .state-status {
   display: flex;
-  flex-direction: row;
+  /* flex-direction: row; */
   justify-content: space-between;
 }
 
 .state {
   font-weight: 600;
+  margin-right: auto;
 }
 
 .status {
   font-size: 1.1rem;
-}
-
-.image-version {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.image {
-  margin-right: 4rem;
 }
 
 /*
