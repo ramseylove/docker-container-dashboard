@@ -180,10 +180,12 @@ html {
 .state {
   font-weight: 600;
   margin-right: auto;
+  text-transform: capitalize;
 }
 
 .status {
   font-size: 1.1rem;
+  text-transform: capitalize;
 }
 
 /*

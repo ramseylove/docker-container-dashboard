@@ -1,7 +1,9 @@
 import { capitalize } from "./utils";
 
+const apiUrl = "http://localhost:5500/containers/";
+
 export async function getAllContainers() {
-  const response = await fetch("http://localhost:5500/containers");
+  const response = await fetch(apiUrl);
 
   const data = await response.json();
 
@@ -18,18 +20,27 @@ export async function getAllContainers() {
     };
   });
 
-  // for (const c in data) {
-  //   containers.push({
-  //     id: c.id,
-  //     image: c.Image,
-  //     labels: { ...c.Labels },
-  //     // description: c.Labels["org.label-schema.description"],
-  //     // name: c.Labels["org.label-schema.name"],
-  //     // version: c.Labels["org.label-schema.version"],
-  //     // created: c.Labels["org.opencontainers.image.created"],
-  //     // vcsUrl: c.Labels["org.label-schema.vcs-url"],
-  //   });
-  // }
-
   return containers;
+}
+
+export async function getContainer(id) {
+  const response = await fetch(apiUrl + id);
+
+  const data = await response.json();
+
+  const container = { ...data };
+
+  return container;
+}
+
+export async function getLogs(id) {
+  const response = await fetch(
+    "http://192.168.0.49:9000/api/endpoints/1/docker/containers/" +
+      id +
+      "/logs?stdout=true&tail=20"
+  );
+
+  const data = await response.json();
+
+  return data;
 }

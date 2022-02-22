@@ -5,10 +5,9 @@ import DockerCardList from "../components/docker/docker-card-list";
 function HomePage(props) {
   console.log(props.containers);
   return (
-    <div>
-      <h3>Hello Docker Cards</h3>
+    <>
       <DockerCardList containers={props.containers} />
-    </div>
+    </>
   );
 }
 
@@ -22,5 +21,17 @@ export const getStaticProps = async (ctx) => {
     },
   };
 };
+
+// export const getStaticPaths = async () => {
+//   const allContainers = await getAllContainers();
+
+//   const ids = allContainers.map((container) => container.id);
+//   const pathsWithParams = ids.map((id) => ({ params: { id: id } }));
+
+//   return {
+//     paths: pathsWithParams,
+//     fallback: false,
+//   };
+// };
 
 export default HomePage;

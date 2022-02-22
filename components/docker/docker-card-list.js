@@ -4,7 +4,6 @@ import DockerCard from "./docker-card";
 
 function DockerCardList(props) {
   const { containers } = props;
-  console.log(containers);
   return (
     <div className="main">
       {containers.map((container) => (
