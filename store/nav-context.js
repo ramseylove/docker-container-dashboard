@@ -1,6 +1,7 @@
 import { createContext, useState } from "react";
 
 const NavigationContext = createContext({
+  pageTitle: "",
   pageNavigationItems: null,
   navigationViewable: false,
   showNavigation: function () {},
@@ -10,6 +11,7 @@ const NavigationContext = createContext({
 export function NavigationContextProvider(props) {
   const [navigationItems, setNavigationItems] = useState({});
   const [navigationVisible, setNavigationVisible] = useState(false);
+  const [pageTitle, setPageTitle] = useState("C-DASH");
 
   function showNavigationHandler() {
     if (!navigationVisible) {
@@ -27,6 +29,7 @@ export function NavigationContextProvider(props) {
   }
 
   const context = {
+    pageTitle: pageTitle,
     pageNavigationItems: navigationItems,
     navigationVisible: navigationVisible,
     showNavigation: showNavigationHandler,

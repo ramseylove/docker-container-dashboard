@@ -240,16 +240,17 @@ html {
   max-width: 610px;
   max-height: 60rem;
   overflow-y: scroll;
+  overflow-x: scroll;
   border: 1px solid rgba(0, 0, 0, 0.2);
   box-shadow: inset 0px 2px 5px 0px #919;
 }
 pre {
-  word-wrap: break-word;
+  /* word-wrap: break-word; */
   text-align: justify;
   font-family: "Andale Mono WT";
   font-size: 1.3rem;
   line-height: 2rem;
-  white-space: pre-wrap;
+  /* white-space: pre-wrap; */
   padding: 2rem;
 }
 /* Dark Mode Toggle */

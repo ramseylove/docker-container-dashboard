@@ -33,14 +33,25 @@ export async function getContainer(id) {
   return container;
 }
 
-export async function getLogs(id) {
-  const response = await fetch(
-    "http://192.168.0.49:9000/api/endpoints/1/docker/containers/" +
-      id +
-      "/logs?stdout=true&tail=20"
-  );
+export async function getLogs(id, key) {
+  let headers = new Headers();
+  headers.append("X-API-Key", key);
+  try {
+    const response = await fetch(
+      "http://192.168.0.49:9000/api/endpoints/1/docker/containers/" +
+        id +
+        "/logs?stdout=true&tail=20",
+      {
+        headers: headers,
+      }
+    );
 
-  const data = await response.json();
+    const data = await response.text();
+    return data;
+  } catch (error) {
+    console.log(err);
+    throw error;
+  }
 
   return data;
 }
